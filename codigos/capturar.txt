@@ -1,0 +1,3 @@
+const paymentIntentId = 'id_do_payment_intent'; // você precisa guardar esse ID
+
+const paymentIntent = await stripe.paymentIntents.capture(paymentIntentId);
