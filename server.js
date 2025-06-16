@@ -1,9 +1,9 @@
 const express = require('express');
+const path = require('path'); // <-- ESTA LINHA É FUNDAMENTAL
 const app = express();
-const path = require('path'); // ✅ Importação necessária
 require('dotenv').config();
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-const path = require('path'); // adicione no topo se não estiver
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
