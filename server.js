@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); // ✅ Use .env
+
 
 app.use(express.json());
 app.use(express.static('public')); // ✅ HTML/CSS/JS ficam aqui
