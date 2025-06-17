@@ -109,22 +109,23 @@ body {
 <img src="img/logo.jpg" alt="Logo">
   </div>
 
-  <h2>Pré-autorização - 200 euros </h2>
+  <h2>Preauthorization of 200 Euros </h2>
 
 <form id="payment-form">
-  <label for="customer-name">Seu nome</label>
-  <input type="text" id="customer-name" placeholder="Digite seu nome" required style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px;">
+  <input type="text" id="customer-name" placeholder="Name" required style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px;">
 
   <div id="card-element"></div>
   <div id="card-errors" role="alert"></div>
-  <button type="submit">Autorizar pagamento</button>
+  <button type="submit">Authorize payment</button>
 </form>
-  <p>Tecnologia Stripe.com </p>
+  <p> Stripe.com Tecnology </p>
 
 </div>
 
 <script>
-  const stripe = Stripe('pk_live_51RTCDDCKW08xHsEtq8twgUKK0MFfeB0TxzQRZeZ68j96LDaEzjoDK6izNUdvwOxCVEn2JfoO3CLwqLnpPm6TAyMz00MTLgHUVM');
+  const stripe = Stripe('pk_live_51RTCDDCKW08xHsEtq8twgUKK0MFfeB0TxzQRZeZ68j96LDaEzjoDK6izNUdvwOxCVEn2JfoO3CLwqLnpPm6TAyMz00MTLgHUVM', {
+    locale: 'en' // <- isso muda os placeholders
+  });
 
   const elements = stripe.elements();
   const cardElement = elements.create('card');
